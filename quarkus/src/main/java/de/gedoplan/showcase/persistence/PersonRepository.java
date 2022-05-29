@@ -18,6 +18,15 @@ public class PersonRepository {
     this.entityManager.persist(person);
   }
 
+  public Person merge(Person person) {
+    return this.entityManager.merge(person);
+  }
+
+  public void removeById(Integer id) {
+    Person person = findById(id);
+    if (person != null)
+      this.entityManager.remove(person);
+  }
   public Person findById(Integer id) {
     return this.entityManager.find(Person.class, id);
   }
