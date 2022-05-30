@@ -116,6 +116,8 @@ siehe `sniplets/myfaces_primefaces.txt`.
 
 ---
 
-Ein thematisch passendes Seminar finden Sie hier:
+Thematisch passendende Seminare finden Sie hier:
 
-https://gedoplan-it-training.de/java-grundkurse/microservices-mit-quarkus-kompakt/
+* https://gedoplan.de/kursthemen/jakarta-ee-java-ee/schulung-einfuehrung-quarkus/
+* https://gedoplan.de/kursthemen/jakarta-ee-java-ee/migration-jee-quarkus/
+* https://gedoplan.de/kursthemen/jakarta-ee-java-ee/microservices-mit-quarkus-kompakt/
