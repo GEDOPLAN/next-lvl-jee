@@ -1,4 +1,5 @@
 # next-lvl-jee
+
 Begleitprojekte zum Vortrag "Migration von JEE-Anwendungen auf Quarkus"
 
 Im Verzeichnis std-jee liegt eine kleine Beispiel-Anwendung als klassisches JEE-Deployment.
@@ -49,28 +50,47 @@ Wir lassen die DB-Tabellen automatisch erzeugen. Dazu bitte in `src/main/resourc
 `quarkus.hibernate-orm.database.generation=update`
 +
 Es kann auch schon die gesamte Datei aus `scripts` übernommen werden. Die anderen Einstellungen sind aber (noch)´ nicht wichtig.
+
+.. Klassen (unverändert) übernehmen:
 +
-Anwendung wieder im Dev Mode starten: `mvn quarkus:dev`.
+* `de.gedoplan.showcase.domain.Person`
+* `de.gedoplan.showcase.persistence.PersonRepository`
+* `de.gedoplan.showcase.service.PersonService`
+* `de.gedoplan.showcase.rest.PersonResource`
+* `de.gedoplan.showcase.rest.RestApplication`
+
+.. Anwendung wieder im Dev Mode starten: `mvn quarkus:dev`.
 
 .. Einige `curl`-Aufrufe zum Ausprobieren:
 
- curl -X POST localhost:8080/person \
+ curl -X POST localhost:8080/api/persons \
    -H 'content-type: application/json' \
    -d '{"name": "Dagobert Duck", "birthDay": "1905-12-05"}'
  
- curl -X POST localhost:8080/person \
+ curl -X POST localhost:8080/api/persons \
    -H 'content-type: application/json' \
    -d '{"name": "Donald Duck", "birthDay": "1931-03-13"}'
    
- curl -X POST localhost:8080/person \
+ curl -X POST localhost:8080/api/persons \
    -H 'content-type: application/json' \
    -d '{"name": "Tick Duck", "birthDay": "1940-08-17"}'
    
- curl localhost:8080/person
+ curl localhost:8080/api/persons
  
- curl localhost:8080/person/avgAge
+ curl localhost:8080/api/persons/avgAge
 
- 
+
+. Erstellen von Container Images
++
+Mit den Scripts `scripts/build_jvm.sh` und `scripts/build_native.sh` können Docker Images für den Betrieb als 'normale' Java-Anwendung bzw. als Native-Anwendung erstellt werden.
++
+WARNING: Der Native Build dauert recht lange.
++
+NOTE: Das Erstellen des Native Image funktioniert nicht mit dem später ergänzten JSF-Anteil.
++
+Die Anwendung kann mit Hilfe der Scripts `scripts/run_jvm.sh` bzw. `scripts/run_native.sh` als Container gestartet werden.
+
+
 . Test-Unterstützung
 +
 In `scripts/src/test` befinden sich einige Test-Klassen, die als Projekt-Sourcen übernommen werden können.
