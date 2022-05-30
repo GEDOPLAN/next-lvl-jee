@@ -17,7 +17,7 @@ public class PersonResourceTest {
   @Test
   void testGetAverageAge() {
     given()
-      .when().get("/persons/avgAge")
+      .when().get("/api/persons/avgAge")
       .then()
       .statusCode(200)
       .body(is(Double.toString(PersonRepositoryMock.getAvgAge())));
