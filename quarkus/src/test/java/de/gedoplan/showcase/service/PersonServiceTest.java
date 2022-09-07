@@ -4,13 +4,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import javax.inject.Inject;
 
-import de.gedoplan.showcase.domain.Person;
-import de.gedoplan.showcase.persistence.PersonRepositoryMock;
 import org.junit.jupiter.api.Test;
 
+import de.gedoplan.showcase.persistence.PersonRepositoryMock;
 import io.quarkus.test.junit.QuarkusTest;
-
-import java.util.Arrays;
 
 @QuarkusTest
 public class PersonServiceTest {

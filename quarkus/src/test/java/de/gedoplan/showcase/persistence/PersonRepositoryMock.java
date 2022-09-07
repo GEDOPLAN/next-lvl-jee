@@ -1,6 +1,5 @@
 package de.gedoplan.showcase.persistence;
 
-import de.gedoplan.showcase.domain.Person;
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
@@ -8,6 +7,8 @@ import java.util.List;
 import javax.annotation.Priority;
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Alternative;
+
+import de.gedoplan.showcase.domain.Person;
 
 @ApplicationScoped
 @Alternative
@@ -35,7 +36,7 @@ public class PersonRepositoryMock extends PersonRepository {
 
   @Override
   public List<Person> findAll() {
-    return Arrays.asList(this.PERSONS);
+    return Arrays.asList(PERSONS);
   }
 
   @Override

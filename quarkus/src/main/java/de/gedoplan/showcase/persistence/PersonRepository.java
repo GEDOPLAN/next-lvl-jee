@@ -1,13 +1,12 @@
 package de.gedoplan.showcase.persistence;
 
-import de.gedoplan.showcase.domain.Person;
-
 import java.util.List;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
-import javax.transaction.Transactional;
+
+import de.gedoplan.showcase.domain.Person;
 
 @ApplicationScoped
 public class PersonRepository {
