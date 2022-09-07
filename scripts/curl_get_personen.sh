@@ -1,1 +1,1 @@
-curl localhost:8080/persons
+curl localhost:8080/api/persons
