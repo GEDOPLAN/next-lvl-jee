@@ -2,22 +2,30 @@
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>de.gedoplan</groupId>
+    <artifactId>build-master</artifactId>
+    <version>2022.10.1</version>
+    <relativePath/>
+  </parent>
+
   <groupId>de.gedoplan.showcase.next-lvl</groupId>
   <artifactId>quarkus</artifactId>
   <version>1.0-SNAPSHOT</version>
+
   <properties>
-    <compiler-plugin.version>3.8.1</compiler-plugin.version>
-    <failsafe.useModulePath>false</failsafe.useModulePath>
-    <maven.compiler.release>17</maven.compiler.release>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
     <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
-    <quarkus.platform.version>2.9.2.Final</quarkus.platform.version>
-    <surefire-plugin.version>3.0.0-M5</surefire-plugin.version>
-    <myfaces.version>2.3-next-M6</myfaces.version>
+    <quarkus.platform.version>2.13.4.Final</quarkus.platform.version>
+
+    <myfaces.version>2.3-next-M7</myfaces.version>
+
     <primefaces.version>11.0.0</primefaces.version>
+
+    <failsafe.useModulePath>false</failsafe.useModulePath>
   </properties>
+
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -98,21 +106,22 @@
         </executions>
       </plugin>
       <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>${compiler-plugin.version}</version>
-        <configuration>
-          <compilerArgs>
-            <arg>-parameters</arg>
-          </compilerArgs>
-        </configuration>
-      </plugin>
-      <plugin>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>${surefire-plugin.version}</version>
         <configuration>
           <systemPropertyVariables>
             <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
             <maven.home>${maven.home}</maven.home>
+            <maven.repo>${settings.localRepository}</maven.repo>
+          </systemPropertyVariables>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-failsafe-plugin</artifactId>
+        <configuration>
+          <systemPropertyVariables>
+            <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
+            <maven.home>${maven.home}</maven.home>
+            <maven.repo>${settings.localRepository}</maven.repo>
           </systemPropertyVariables>
         </configuration>
       </plugin>
@@ -130,7 +139,6 @@
         <plugins>
           <plugin>
             <artifactId>maven-failsafe-plugin</artifactId>
-            <version>${surefire-plugin.version}</version>
             <executions>
               <execution>
                 <goals>
@@ -140,8 +148,6 @@
                 <configuration>
                   <systemPropertyVariables>
                     <native.image.path>${project.build.directory}/${project.build.finalName}-runner</native.image.path>
-                    <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
-                    <maven.home>${maven.home}</maven.home>
                   </systemPropertyVariables>
                 </configuration>
               </execution>

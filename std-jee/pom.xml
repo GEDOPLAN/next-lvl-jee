@@ -9,7 +9,7 @@
     <groupId>de.gedoplan</groupId>
     <artifactId>build-master</artifactId>
     <version>2022.10.1</version>
-    <relativePath></relativePath>
+    <relativePath/>
   </parent>
 
   <groupId>de.gedoplan.showcase.next-lvl</groupId>
