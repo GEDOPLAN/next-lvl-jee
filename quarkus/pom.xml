@@ -46,9 +46,9 @@
       <version>${myfaces.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.primefaces</groupId>
-      <artifactId>primefaces</artifactId>
-      <version>${primefaces.version}</version>
+      <groupId>io.quarkiverse.primefaces</groupId>
+      <artifactId>quarkus-primefaces</artifactId>
+      <version>${primefaces-quarkus.version}</version>
     </dependency>
 
     <dependency>
