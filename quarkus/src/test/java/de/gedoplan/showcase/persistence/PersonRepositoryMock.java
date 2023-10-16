@@ -1,14 +1,14 @@
 package de.gedoplan.showcase.persistence;
 
+import de.gedoplan.showcase.domain.Person;
+
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
 
-import javax.annotation.Priority;
-import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.inject.Alternative;
-
-import de.gedoplan.showcase.domain.Person;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.inject.Alternative;
+import jakarta.annotation.Priority;
 
 @ApplicationScoped
 @Alternative

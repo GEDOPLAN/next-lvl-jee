@@ -3,8 +3,8 @@ package de.gedoplan.showcase.service;
 import de.gedoplan.showcase.domain.Person;
 import de.gedoplan.showcase.persistence.PersonRepository;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
 
 @ApplicationScoped
 public class PersonService {

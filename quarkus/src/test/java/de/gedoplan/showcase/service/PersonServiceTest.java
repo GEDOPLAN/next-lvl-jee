@@ -1,13 +1,13 @@
 package de.gedoplan.showcase.service;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import de.gedoplan.showcase.persistence.PersonRepositoryMock;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 
+import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.Test;
 
-import de.gedoplan.showcase.persistence.PersonRepositoryMock;
-import io.quarkus.test.junit.QuarkusTest;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @QuarkusTest
 public class PersonServiceTest {
