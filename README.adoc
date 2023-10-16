@@ -93,7 +93,7 @@ Die Anwendung kann mit Hilfe der Scripts `scripts/run_jvm.sh` bzw. `scripts/run_
 
 . Test-Unterstützung
 +
-In `scripts/src/test` befinden sich einige Test-Klassen, die als Projekt-Sourcen übernommen werden können.
+In `sniplets/src/test` befinden sich einige Test-Klassen, die als Projekt-Sourcen übernommen werden können.
 +
 Start der Tests
 * in der IDE
@@ -113,11 +113,3 @@ siehe `sniplets/myfaces_primefaces.txt`.
 * Descriptor `web.xml` aus `src/main/webapp` nach `src/main/resources/META-INF
 * Web-Dateien aus `src/main/webapp` nach `src/main/resources/META-INF/resources`
 
-
----
-
-Thematisch passendende Seminare finden Sie hier:
-
-* https://gedoplan.de/kursthemen/jakarta-ee-java-ee/schulung-einfuehrung-quarkus/
-* https://gedoplan.de/kursthemen/jakarta-ee-java-ee/migration-jee-quarkus/
-* https://gedoplan.de/kursthemen/jakarta-ee-java-ee/microservices-mit-quarkus-kompakt/

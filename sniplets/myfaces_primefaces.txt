@@ -1,13 +1,13 @@
-    <myfaces.version>2.3-next-M6</myfaces.version>
-    <primefaces.version>11.0.0</primefaces.version>
+    <myfaces-quarkus.version>4.0.1</myfaces-quarkus.version>
+    <quarkus-primefaces.version>3.12.5</quarkus-primefaces.version>
 
     <dependency>
       <groupId>org.apache.myfaces.core.extensions.quarkus</groupId>
       <artifactId>myfaces-quarkus</artifactId>
-      <version>${myfaces.version}</version>
+      <version>${myfaces-quarkus.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.primefaces</groupId>
-      <artifactId>primefaces</artifactId>
-      <version>${primefaces.version}</version>
+      <groupId>io.quarkiverse.primefaces</groupId>
+      <artifactId>quarkus-primefaces</artifactId>
+      <version>${quarkus-primefaces.version}</version>
     </dependency>

@@ -2,7 +2,7 @@ package de.gedoplan.showcase.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 
 import de.gedoplan.showcase.domain.Person;
 import de.gedoplan.showcase.persistence.PersonRepositoryMock;
