@@ -2,16 +2,16 @@
 
 Begleitprojekte zum Vortrag "Migration von JEE-Anwendungen auf Quarkus"
 
-Im Verzeichnis std-jee liegt eine kleine Beispiel-Anwendung als klassisches JEE-Deployment.
+Im Verzeichnis std-jee liegt eine kleine Beispiel-Anwendung für ein klassisches JEE-Deployment als `war`-File.
 Der Zielserver benötigt eine Datasource mit dem JNDI-Namen java:/jdbc/showcase.
 
 Im Folgenden wird eine PostgreSQL-DB genutzt, die mit dem Script `scripts/postgres.sh` als Docker-Container gestartet werden kann.
 
-In `std-jee/pom.xml` ist das `wildfly-jar-maven-plugin` eingetragen, mit dessen Hilfe ein passend konfigurierter WildFly als sog. Bootable JAR bereit gestellt  wird. Darin kann die Anwendung dann hochgefahren werden:
+In `std-jee/pom.xml` ist das `wildfly-jar-maven-plugin` eingetragen, mit dessen Hilfe ein passend konfigurierter WildFly als sog. Bootable JAR bereitgestellt wird. Darin kann die Anwendung dann hochgefahren werden:
 
 [source,sh]
 ----
-mvn clean package
+mvn clean package wildfly-jar:package
 java -jar target/wildfly-bootable.jar --deployments=target/std-jee.war
 ----
 
